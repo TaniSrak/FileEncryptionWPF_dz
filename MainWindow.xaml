@@ -1,0 +1,31 @@
+﻿<Window x:Class="FileEncryptionWPF_dz.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="File Encryption" Height="400" Width="600">
+    <Grid>
+        <TextBlock Text="File Encryption App" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+
+        <!-- выбор файлов -->
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,50,0,0">
+            <Button Content="Выбрать файлы" Width="150" Click="btnSelectFiles_Click"/>
+            <ListBox Name="lstSelectedFiles" Width="350" Height="100" Margin="10,0,0,0"/>
+        </StackPanel>
+
+        <!-- ввод ключа -->
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,180,0,0">
+            <TextBlock Text="Введите ключ шифрования (для Цезаря)" />
+            <TextBox Name="txtCaesarKey" Width="200" Margin="0,5,0,10"/>
+
+            <TextBlock Text="Введите ключ шифрования (для Вижинера)" />
+            <TextBox Name="txtVigenereKey" Width="200" Margin="0,5,0,10"/>
+        </StackPanel>
+
+        <!-- для шифрования, расшифровки и отправки -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
+            <Button Content="Шифровать (Цезарь)" Width="150" Margin="10" Click="btnEncryptCaesar_Click"/>
+            <Button Content="Шифровать (Вижинер)" Width="150" Margin="10" Click="btnEncryptVigenere_Click"/>
+            <Button Content="Расшифровать" Width="150" Margin="10" Click="btnDecrypt_Click"/>
+            <Button Content="Отправить письмо" Width="150" Margin="10" Click="btnSendEmail_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
